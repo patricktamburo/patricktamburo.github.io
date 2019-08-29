@@ -51,7 +51,7 @@ h1 {
 	position: relative;
 	top: 0px; /* The exact location of the text from the top of the image*/
 	left: 20px; /* Other beautification stuff */
-	width:500px;
+	width:800px;
 		z-index:2999;
 
 
@@ -76,7 +76,7 @@ h3 {
 	position: relative;
 	top: 0px; /* The exact location of the text from the top of the image*/
 	left: 20px; /* Other beautification stuff */
-		width:700px;
+		width:1000px;
 			z-index:1999;
 
 	
