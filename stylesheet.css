@@ -5,7 +5,7 @@ html {
 }
 
 body {
-	padding-top: 2.0vw;
+	padding-top: 0.0vw;
 }
 
  /* The navigation bar */
@@ -15,18 +15,19 @@ body {
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
-	z-index: 2000;
+  z-index: 2000;
+  border-bottom: 3px solid lightgrey;
 }
 
 /* Links inside the navbar */
 .navbar a {
 	font-family: 'Inter UI', sans-serif;
-	font-size:1.7vw;
+	font-size:1.4vw;
 	float: center;
 	display: inline-block;
 	color: darkgray;
 	text-align: center;
-	padding: 4px 10px;
+	padding: 2px 30px;
 	text-decoration: none;
 	}
 
@@ -34,7 +35,10 @@ body {
 .navbar a:hover {
   background: #ddd;
   color: black;
+  /*border-left: thick solid red; */
+
 }
+
 
 /* Main content */
 .main {
@@ -52,7 +56,7 @@ h1 {
 	top: 0px; /* The exact location of the text from the top of the image*/
 	left: 20px; /* Other beautification stuff */
 	width:800px;
-		z-index:2999;
+		z-index:1999;
 
 
 }
@@ -79,65 +83,7 @@ h3 {
 		width:1000px;
 			z-index:1999;
 
-	
-
 }
-
-
-
-/* Dropdown Button */
-.dropbtn {
-	font-family: 'Inter UI', sans-serif;
-	background-color: #F3F3F3;
-	color:grey;
-	padding:0.5vw;
-	font-size: 20px;
-	font-size:2.0vw;
-	border: none;
-	
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: fixed;
-  display: inline-block;
-  right: 20px;
-	top: 10px;
-	z-index:999;
-	opacity:0.9;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-	font-family: 'Inter UI', sans-serif;
-	display: none;
-	position: absolute; 
-		font-size:2.0vw;
-
-	background-color: white;
-	min-width: 100px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 999;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-		font-size:2.0vw;
-
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #E0DDDD;}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #E0DDDD;}
 
 .container {
   position: relative;
@@ -196,7 +142,7 @@ h3 {
 	max-width:100%;
 }
 
-.containter-full {
+.container-full {
 	 position: relative;
   text-align: left;
   color: black;
@@ -217,6 +163,8 @@ display:block;
   color: black;
 	width:100%;
 }
+
+
 /* Top right text */
 .top-right {
 	font-family: 'Inter UI', sans-serif;
@@ -348,3 +296,12 @@ font-size: 1.2vw;
   background-size: cover;
 	width:100%;
 }
+
+.block-between-sections-home{
+	height: 45px;
+}
+
+.block-between-sections{
+	height: 60px;
+}
+
