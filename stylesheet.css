@@ -1,4 +1,6 @@
 @import url('inter-ui.css');
+@import url("computer.css");
+@import url("mobile.css");
 
 html {
   scroll-behavior: smooth;
@@ -56,7 +58,8 @@ h1 {
 	top: 0px; /* The exact location of the text from the top of the image*/
 	left: 20px; /* Other beautification stuff */
 	width:800px;
-		z-index:1999;
+	z-index:1999;
+	color: black;
 
 
 }
