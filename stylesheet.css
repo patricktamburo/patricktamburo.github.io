@@ -67,7 +67,7 @@ h2{
 	font-family: 'Inter UI', sans-serif;
 	line-height: 20px;
 	font-style:normal;
-	font-size: 20px;
+	font-size: 1.7vw;
 	top: 0px; /* The exact location of the text from the top of the image*/
 	left: 100px; /* Other beautification stuff */
 	font-weight: 10;
@@ -94,20 +94,23 @@ h3 {
   color: black;
 }
 
-/* Top left text */
+/* Top center text */
 .top-center {
 	font-family: 'Inter UI', sans-serif;
-	/*font-size: 20px;*/
 	font-size: 1.7vw;
   	position: absolute;
-  	top: 7vw;
-  	left: 30px;
-	right:30px;
+
   	background-color: rgba(255, 255, 255, 0.8);
-	padding-left: 10px;
-	padding-right:10px;
-	padding-top:10px;
-	padding-bottom:10px;
+
+}
+
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 
