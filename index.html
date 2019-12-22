@@ -1,141 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Patrick Tamburo</title>
-		<style type="text/css">
-		@import url("stylesheet.css");
-		@import url("mobile.css") only screen and (min-width:321px) and (max-width:812px);
-		</style>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147163968-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-		  gtag('config', 'UA-147163968-1');
-		</script>
-
-		
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="stylesheet.css">
 	</head>
-
 	<body>
-		<div class="container-full" id="home"></div>
-		<div class="container">
-			 <div class="navbar">
-				<a href="#home">Home</a>
-				<a href="#currentprojects">Current Projects</a>
-				<a href="#cv">CV</a>
-				<a href="#publications">Publications</a>
-				<a href="#contact">Contact</a>
-			</div>
+		
+		<img  class="img-banner" src="images/Website_splash.png" alt="banner" width="100%">
+		<div class="wrapper">
+			<article class="welcome">
+				<h2 align="center">Welcome!</h2>
+				<p> I am a third-year graduate student at Boston University working in the <a href="http://sites.bu.edu/smallstars/">Low-Mass Star Group</a>. My main area of research is searching for transiting, Earth-like planets around small stars and brown dwarfs, in order to provide future space missions with terrestrial planets for potential atmospheric characterization. Scroll down for a list of my current projects, or check out my previous work <a href="#publications">here</a>. You can view a copy of my CV <a href="Professional_CV.pdf" target="_blank">here</a>.</p>
+			</article>
 		</div>
 		
-		<div class="block-between-sections-home">
-		</div>
+		<img class="img-welcome" src="images/hz_planet.png" alt="welcome" width="100%">
 		
-		<div class="container-left">
-			<h1>Patrick Tamburo</h1>
-			<h3> Graduate student in astrophysics</h3>
-		</div>
-		<img src="images/Website_splash.png" width="100%"/>
-		
-		<div class="container">
-			<div class="parallax1">
-				<div class="top-center">Welcome! I am a third-year graduate student at Boston University working in the <a href="http://sites.bu.edu/smallstars/">Low-Mass Star Group</a>. My main area of research is searching for transiting, Earth-like planets around small stars and brown dwarfs, in order to provide future space missions with terrestrial planets for potential atmospheric characterization. Scroll down for a list of my current projects, or check out my previous work <a href="#publications">here</a>. You can view a copy of my CV <a href="Professional_CV.pdf" target="_blank">here</a>.</div>
-			</div>
-			<div class="container-full" id="currentprojects"></div>
-		</div>
-		
-		<div class="block-between-sections">
-		</div>
-											
-		<div class="container-full" >
-			<h1>Current Projects</h1>
+		<article class="current-projects">
+			<h2>Current Projects</h2>
 			<h3>PINES</h3>
-			<div class="container-left">
-				<img src="images/pines.png" height="400" width="400">
-				<div class="top-right">
-					PINES (the Perkins INfrared Exosatellite Survey) is a search for transiting exosatellites around L- and T-type dwarfs. L and T dwarfs are some of the smallest, coolest, and least-luminous planetary host objects in the Universe, and represent an extreme environment for planetary formation and evolution. However, these spectral types have not been thoroughly probed for planets. The PINES project will search for these planets at infared wavelengths over a three-year survey, in an attempt to discover terrestrial planets that may be amenable to follow-up atmospheric characterization. Project website coming soon!
-				</div>
-			</div>
-		</div>
-	
-		<div class="block-between-sections">
-		</div>	
-	
-		<div class="container">
-			<div class="parallax5">
-			</div>
-			<div class="container-full" id="cv"></div>
-
-		</div>
+			<img class="current-projects" src="images/pines.png" alt="PINES" width="35%">
+			<p>PINES (the <b>P</b>erkins <b>IN</b>frared <b>E</b>xosatellite <b>S</b>urvey) is a search for transiting exosatellites around L- and T-type dwarfs. L and T dwarfs are some of the smallest, coolest, and least-luminous planetary host objects in the Universe, and represent an extreme environment for planetary formation and evolution. However, these spectral types have not been thoroughly probed for planets. The PINES project will search for these planets at infared wavelengths over a three-year survey, in an attempt to discover terrestrial planets that may be amenable to follow-up atmospheric characterization. Project website coming soon! </p>
+		</article>
 		
-		<div class="block-between-sections">
-		</div>
+		<img class="img-welcome" src="images/Wasp18.jpg" alt="welcome" width="100%">
 		
-		<div class="container-full">
-			<h1>CV</h1>
+		<article class="cv">
+			<h2>CV</h2>
 			<div style="margin: 0 auto; width:80%; border:8px solid grey;"><!--Change this width if you want-->
-				<embed src="Professional_CV.pdf" width="100%" height="500" align="center"
+				<embed src="Professional_CV.pdf" width="100%" height="400" align="center"
 			 	type="application/pdf">
 			</div>
-			<h2> If the CV preview did not load, please download it <a href="Professional_CV.pdf">here</a>.</h2>
-		</div>
+			<h3> If the CV preview did not load, please download it <a href="Professional_CV.pdf">here</a>.</h3>
+		</article>
 		
+		<img class="img-welcome" src="images/55CncParallax.png" alt="welcome" width="100%">
 		
-		
-		<div class="container">
-			<div class="parallax6">
-			</div>
-			<div class="container-full" id="publications"></div>
-
-		</div>
-		
-		<div class="block-between-sections">
-		</div>
-		
-		<div class="container-pubs">
-			<h1>Publications</h1>
-			<!--<h3>Full ADS Listing</h3>
-			<div style="margin: 0 auto; width:80%; 	border:8px solid grey;">
-				<iframe id="iframe" src="https://ui.adsabs.harvard.edu/search/q=author%3A%22Tamburo%2C%20Patrick%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" title="Author Query Results" class="iframe-no-border graphic" width="100%" height="500" frameborder="0"><a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Tamburo%2C%20Patrick%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" title="Author Query Results">Author Query Results</a>
-				
-				</iframe>
-    		</div> -->
-			
-			<h3> First-authored, refereed</h3>
-			 <ol type="1">
-			  <li><span><a href="https://arxiv.org/abs/1908.03593" target="blank">P. Tamburo & P. S. Muirhead. “Design Considerations for a Ground-Based Search for Transiting Planets around L and T Dwarfs”. PASP, accepted.</a></span></li>
+		<article class="pubs">
+			<h2>Publications</h2>
+			<h3>First-authored, refereed</h3>
+				<ol type="1">
+			  		<li><span><a href="https://arxiv.org/abs/1908.03593" target="blank">P. Tamburo & P. S. Muirhead. “Design Considerations for a Ground-Based Search for Transiting Planets around L and T Dwarfs”. PASP, 131, 1005, Oct. 2019.</a></span></li>
 				 
-			  <li><span><a href="https://arxiv.org/abs/1804.03735" target="blank">P. Tamburo, A. Mandell, D. Deming, & E. Garhart. “Confirming Variability in the Secondary Eclipse Depth of the Super Earth 55 Cancri E”. AJ, 155, 5, May 2018</a></span></li>
-			</ol> 
-			
-			<h3> Co-authored, refereed</h3>
-			<ol type="1">
-			  <li><span><a href="https://arxiv.org/abs/1903.01478" target="blank"> P. A. Dalba & P. Tamburo. “Spitzer Detection of the Transiting Jupiter-analog Exoplanet Kepler-167e.” ApJL, 873, L17, Mar 2019.</a></span></li>
+			  		<li><span><a href="https://arxiv.org/abs/1804.03735" target="blank">P. Tamburo, A. Mandell, D. Deming, & E. Garhart. “Confirming Variability in the Secondary Eclipse Depth of the Super Earth 55 Cancri E”. AJ, 155, 5, May 2018.</a></span></li>
+				</ol> 
+			<h3>Co-authored, refereed</h3>
+				<ol type="1">
+			  		<li><span><a href="https://arxiv.org/abs/1903.01478" target="blank"> P. A. Dalba & P. Tamburo. “Spitzer Detection of the Transiting Jupiter-analog Exoplanet Kepler-167e.” ApJL, 873, L17, Mar 2019.</a></span></li>
 				
-			  <li><span><a href="https://arxiv.org/abs/1711.10491" target="blank">K. Sheppard, A. Mandell, P. Tamburo, S. Gandhi, A. Pinhas, N. Madhusudhan, & D.Deming. “Evidence for a Dayside Thermal Inversion and High Metallicity for the Hot Jupiter WASP-18b”. ApJL, 850, L32, Nov 2017.</a></span></li>
-			</ol> 
-		</div>
-			
-		<div class="container">
-			<div class="parallax7">
-			</div>
-			<div class="container-full" id="contact"></div>
-		</div>
-			
-		<div class="container-full">
-		<h1>Contact</h1>
-		<ul style="list-style-type:none;">
-			<li><span>Email: tamburop@bu.edu</span></li>
-			<li><span><a href="https://twitter.com/PatrickTamburo">twitter.com/PatrickTamburo</a></span></li>
-			<li><span><a href = "https://github.com/patricktamburo">github.com/patricktamburo</a></span></li>
-			<li><span><a href = "https://www.linkedin.com/in/patrick-tamburo/">linkedin.com/in/patrick-tamburo</a></span></li>
-			<li><span><a href = "https://orcid.org/0000-0003-2171-5083">orcid.org/0000-0003-2171-5083</a></span></li>
-			</ul> 	
-			
-			</div>
-			
-    </body>
+			  		<li><span><a href="https://arxiv.org/abs/1711.10491" target="blank">K. Sheppard, A. Mandell, P. Tamburo, S. Gandhi, A. Pinhas, N. Madhusudhan, & D.Deming. “Evidence for a Dayside Thermal Inversion and High Metallicity for the Hot Jupiter WASP-18b”. ApJL, 850, L32, Nov 2017.</a></span></li>
+				</ol> 
+		</article>
+		
+		<img class="img-welcome" src="images/disk.png" alt="welcome" width="100%">
+		<article class="contact">
+			<h2>Contact</h2>
+			<ul style="list-style-type:none;">
+				<li><span>Email: tamburop@bu.edu</span></li>
+				<li><span><a href="https://twitter.com/PatrickTamburo">twitter.com/PatrickTamburo</a></span></li>
+				<li><span><a href = "https://github.com/patricktamburo">github.com/patricktamburo</a></span></li>
+				<li><span><a href = "https://www.linkedin.com/in/patrick-tamburo/">linkedin.com/in/patrick-tamburo</a></span></li>
+				<li><span><a href = "https://orcid.org/0000-0003-2171-5083">orcid.org/0000-0003-2171-5083</a></span></li>
+			</ul>
+		</article>
+
+
+	</body>
 </html>

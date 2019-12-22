@@ -1,313 +1,139 @@
-@import url('inter-ui.css');
-@import url("computer.css");
-@import url("mobile.css");
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-	padding-top: 0.0vw;
-}
-
- /* The navigation bar */
-.navbar {
-  overflow: hidden;
-  background-color: white;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
-  z-index: 2000;
-  border-bottom: 3px solid lightgrey;
-}
-
-/* Links inside the navbar */
-.navbar a {
+* {
+	margin: 0;
+	padding: 0;
 	font-family: 'Inter UI', sans-serif;
-	font-size:1.4vw;
-	float: center;
-	display: inline-block;
-	color: darkgray;
-	text-align: center;
-	padding: 2px 30px;
-	text-decoration: none;
-	}
+}
 
-/* Change background on mouse-over */
-.navbar a:hover {
-  background: #ddd;
-  color: black;
-  /*border-left: thick solid red; */
+.wrapper {
+	width: 100%;
+}
 
+.img-banner {
+	/*display: none;*/
+}
+
+.welcome {
+	width: 100%;
+}
+
+.welcome h2{
+	padding: 10px 30px 10px;
+	font-size: 35px;
+	color: #111;
+	line-height: 44px;
 }
 
 
-/* Main content */
-.main {
-  margin-top: 30px; /* Add a top margin to avoid content overlay */
-} 
 
+.welcome p{
+	padding: 0px 30px 20px;
+	font-size: 16px;
+	color: #111;
+	line-height: 24px;
+}
 
-h1 {
-	font-family: 'Inter UI', sans-serif;
-	line-height: 10px;
-	font-style:normal;
-	/*font-size: 40px;*/
-	font-size: 3vw;
+.img-welcome{
+	width: 100%;
+}
+
+.current-projects h2{
+	padding: 0px 30px 0px;
+	font-size: 35px;
+	color: #111;
+	line-height: 44px;
+}
+
+.current-projects h3{
+	padding: 0px 30px 10px;
+	font-size: 25px;
+	color: #929297;
+	line-height: 25px;
+}
+
+.current-projects {
+    display: table-cell;
+}
+.current-projects img {
+    float: left;
+	padding: 10px 50px 10px 10px;
+}
+
+.current-projects p{
+	padding: 140px 30px 10px 30px;
+	font-size: 16px;
+	color: #111;
+	line-height: 24px;
 	position: relative;
-	top: 0px; /* The exact location of the text from the top of the image*/
-	left: 20px; /* Other beautification stuff */
-	width:800px;
-	z-index:1999;
-	color: black;
-
-
-}
-h2{
-	font-family: 'Inter UI', sans-serif;
-	line-height: 20px;
-	font-style:normal;
-	font-size: 1.7vw;
-	top: 0px; /* The exact location of the text from the top of the image*/
-	left: 100px; /* Other beautification stuff */
-	font-weight: 10;
-
-	color: grey;
+	
 }
 
-h3 {
-	color: grey;
-	font-family: 'Inter UI', sans-serif;
-	line-height: 0.03vw;
-	font-size: 1.5vw;
-	position: relative;
-	top: 0px; /* The exact location of the text from the top of the image*/
-	left: 20px; /* Other beautification stuff */
-		width:1000px;
-			z-index:1999;
+.cv {
+	width: 100%;
+}
+
+.cv h2{
+		padding: 0px 30px 0px;
+		font-size: 35px;
+		color: #111;
+		line-height: 44px;
 
 }
 
-.container {
-  position: relative;
-  text-align: center;
-  color: black;
+.cv h3{
+	padding: 5px 50px 10px;
+	font-size: 2vw;
+	color: #929297;
 }
 
-/* Top center text */
-.top-center {
-	font-family: 'Inter UI', sans-serif;
-	font-size: 1.7vw;
-  	position: absolute;
-
-  	background-color: rgba(255, 255, 255, 0.8);
-
+.pubs {
+	width: 100%;
 }
 
-
-.vertical-center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+.pubs h2{
+	padding: 0px 30px 0px;
+	font-size: 35px;
+	color: #111;
+	line-height: 44px;
 }
 
-
-.parallax1 {
-  /* The image used */
-  background-image: url("images/hz_planet.png");
-
-  /* Set a specific height */
-  height: 30vw;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-retpeat;
-  background-size: cover;
-	width:100%;
-}
-
-
-.parallax2 {
-  /* The image used */
-  background-image: url("images/rotating_sphere_compressed_crop.gif");
-
-	/* Set a specific height */
-	/*height: 500px;*/
-	height: 40vw;
-	/* Create the parallax scrolling effect */
-	background-attachment: fixed;
-	background-position: left;
-	background-repeat: no-repeat;
-	background-size: cover;
-	/*background-size:500px 250px;*/
-	background-size:40.5vw 22.5vw;
-	opacity:1.0;
-	width:100%;
-	max-width:100%;
-}
-
-.container-full {
-	 position: relative;
-  text-align: left;
-  color: black;
-	width:100%;
-}
-
-.container-left {
-  position: relative;
-  text-align: left;
-  color: black;
-	width:100%;
-}
-
-.container-pubs {
-  position: relative;
-display:block;
-	text-align: left;
-  color: black;
-	width:100%;
-}
-
-
-/* Top right text */
-.top-right {
-	font-family: 'Inter UI', sans-serif;
-	/*font-size: 20px;*/
-	font-size: 1.4vw;
-  	position: absolute;
-  	top: 30px;
-	top: 8vw;
-  	left: 500px;
-	left: 40vw;
-	right:8vw;
-	bottom:2vw;
-  	background-color: rgba(255, 255, 255, 0.8);
-	padding-left: 10px;
-	padding-right:10px;
-	padding-top:10px;
-	padding-bottom:10px;
-}
-
-.parallax3 {
-  /* The image used */
-  background-image: url("images/survey_space.png");
-
-  /* Set a specific height */
-  height: 480px;
-  height: 40vw;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: cover;
-	background-size:480px 360px;
-	background-size: 32vw 24vw;
-	opacity: 1.0;
-	width:100%;
-}
-
-/* Top left text */
-.top-left {
-	font-family: 'Inter UI', sans-serif;
-	/*font-size: 20px;*/
-	font-size: 1.4vw;
-  	position: absolute;
-  	/*top: 30px;*/
-  	/*left: 200px;*/
-	/*right:500px;*/
-	/*top: 30px;*/
-	top: 5vw;
-  	/*left: 500px;*/
-	left: 5vw;
-	right:40vw;
-	bottom:5vw;
-  	background-color: rgba(255, 255, 255, 0.8);
-	padding-left: 10px;
-	padding-right:10px;
-	padding-top:10px;
-	padding-bottom:10px;
-}
-
-.parallax4 {
-  /* The image used */
-  background-image: url("images/pretty_edp.png");
-
-  /* Set a specific height */
-  height: 480px;
-	height:25vw;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: cover;
-	background-size:600px 513px;
-	background-size: 32vw 27.36vw;
-	opacity: 1.0;
-	width:100%;
-}
-
-.parallax5 {
-  /* The image used */
-  background-image: url("images/Wasp18.jpg");
-
-  /* Set a specific height */
-  height: 30vw;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-	width:100%;
-}
-
-.parallax6 {
-  /* The image used */
-  background-image: url("images/55CncParallax.png");
-
-  /* Set a specific height */
-  height: 30vw;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-	width:100%;
+.pubs h3{
+	padding: 0px 30px 0px;
+	font-size: 25px;
+	color: #929297;
+	line-height: 25px;
 }
 
 li span {
-  color: black; /* text color */
-  font-family: 'Inter UI', sans-serif;
-font-size: 1.2vw;
+font-size: 16px;
 }
 
 ol {
-	color: black; /* text color */
-  font-family: 'Inter UI', sans-serif;
-font-size: 1.2vw;
+font-size: 16px;
+padding: 10px 50px 10px; 
+
 }
 
-.parallax7  {
-  /* The image used */
-  background-image: url("images/00.png");
-
-  /* Set a specific height */
-  height: 30vw;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.contact {
 	width:100%;
 }
 
-.block-between-sections-home{
-	height: 45px;
+.contact h2{
+	padding: 0px 30px 0px;
+	font-size: 35px;
+	color: #111;
+	line-height: 44px;
 }
 
-.block-between-sections{
-	height: 60px;
+.contact h3{
+	padding: 0px 30px 0px;
+	font-size: 25px;
+	color: #929297;
+	line-height: 25px;
+}
+
+ul {
+font-size: 16px;
+padding: 0px 33px 10px; 
+
 }
 
