@@ -17,7 +17,7 @@
 }
 
 .welcome h2{
-	padding: 10px 30px 10px;
+	padding: 10px 50px 10px;
 	font-size: 35px;
 	color: #111;
 	line-height: 44px;
@@ -26,8 +26,8 @@
 
 
 .welcome p{
-	padding: 0px 30px 20px;
-	font-size: 16px;
+	padding: 0px 50px 20px;
+	font-size: 18px;
 	color: #111;
 	line-height: 24px;
 }
@@ -37,14 +37,14 @@
 }
 
 .current-projects h2{
-	padding: 0px 30px 0px;
+	padding: 0px 50px 0px;
 	font-size: 35px;
 	color: #111;
 	line-height: 44px;
 }
 
 .current-projects h3{
-	padding: 0px 30px 10px;
+	padding: 0px 50px 10px;
 	font-size: 25px;
 	color: #929297;
 	line-height: 25px;
@@ -60,7 +60,7 @@
 
 .current-projects p{
 	padding: 140px 30px 10px 30px;
-	font-size: 16px;
+	font-size: 18px;
 	color: #111;
 	line-height: 24px;
 	position: relative;
@@ -72,7 +72,7 @@
 }
 
 .cv h2{
-		padding: 0px 30px 0px;
+		padding: 0px 50px 0px;
 		font-size: 35px;
 		color: #111;
 		line-height: 44px;
@@ -90,27 +90,31 @@
 }
 
 .pubs h2{
-	padding: 0px 30px 0px;
+	padding: 0px 50px 0px;
 	font-size: 35px;
 	color: #111;
 	line-height: 44px;
 }
 
 .pubs h3{
-	padding: 0px 30px 0px;
+	padding: 0px 50px 0px;
 	font-size: 25px;
 	color: #929297;
 	line-height: 25px;
 }
 
 li span {
-font-size: 16px;
+font-size: 18px;
 }
 
 ol {
-font-size: 16px;
-padding: 10px 50px 10px; 
+font-size: 18px;
+padding: 10px 100px 10px; 
 
+}
+
+li{
+  margin: 15px 0;
 }
 
 .contact {
@@ -118,22 +122,22 @@ padding: 10px 50px 10px;
 }
 
 .contact h2{
-	padding: 0px 30px 0px;
+	padding: 0px 50px 0px;
 	font-size: 35px;
 	color: #111;
 	line-height: 44px;
 }
 
 .contact h3{
-	padding: 0px 30px 0px;
+	padding: 0px 50px 0px;
 	font-size: 25px;
 	color: #929297;
 	line-height: 25px;
 }
 
 ul {
-font-size: 16px;
-padding: 0px 33px 10px; 
+font-size: 18px;
+padding: 0px 50px 10px; 
 
 }
 
