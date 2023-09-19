@@ -292,6 +292,10 @@ input, select, textarea {
 		h5 {
 			font-size: 0.675rem;
 		}
+		
+		embed {
+			display:none;
+		}
 
 	}
 
