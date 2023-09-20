@@ -37,6 +37,13 @@ ol, ul {
 	list-style: none;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 blockquote, q {
 	quotes: none;
 }
@@ -231,7 +238,7 @@ input, select, textarea {
 
 	h2 {
 		font-size: 1.25rem;
-		font-weight: 800;
+		font-weight: 1000;
 		margin: 0 0 2rem 0;
 	}
 
