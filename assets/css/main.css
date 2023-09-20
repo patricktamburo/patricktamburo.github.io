@@ -87,6 +87,11 @@ input, select, textarea {
 		html, body {
 			min-width: 320px;
 		}
+		
+		.image.fill {
+			display: none;
+			height:0%;
+				}
 
 	}
 
@@ -246,6 +251,10 @@ input, select, textarea {
 	}
 
 	@media screen and (max-width: 736px) {
+		
+		.image.fill {
+				margin-left:-10em;
+				}
 
 		h1 {
 			font-size: 4.5rem;
@@ -3497,7 +3506,7 @@ input, select, textarea {
 
 			#wrapper > section.intro > header > * {
 				width: 100%;
-				margin-left: 5vw;
+				margin-left: 0vw;
 				text-align: center;
 			}
 
@@ -3505,6 +3514,10 @@ input, select, textarea {
 				margin-left: 2.5vw;
 				margin: 0px 5rem;
 			}
+			
+			.image.fill {
+				  left: 0rem;
+				}
 
 		}
 
@@ -3517,6 +3530,8 @@ input, select, textarea {
 				#wrapper .copyright {
 					padding: 0 4rem;
 				}
+			
+			
 
 		}
 
