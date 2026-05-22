@@ -27,14 +27,10 @@ import requests
 # ---------------------------------------------------------------------------
 
 AUTHOR_QUERY = 'author:"Tamburo, P."'
-ADS_SEARCH_URL = (
-    "https://api.adsabs.harvard.edu/v1/search/query"
-)
-ADS_PROFILE_URL = (
-    "https://ui.adsabs.harvard.edu/search/p_=0"
-    "&q=author%3A%22Tamburo%2C%20P.%22"
-    "&sort=date%20desc%2C%20bibcode%20desc"
-)
+ADS_SEARCH_URL = "https://api.adsabs.harvard.edu/v1/search/query"
+ADS_LIBRARY_ID = "RaZPacIVQW6Tv521EswTvQ"
+ADS_LIBRARY_URL = f"https://ui.adsabs.harvard.edu/public-libraries/{ADS_LIBRARY_ID}"
+ADS_LIBRARY_API = f"https://api.adsabs.harvard.edu/v1/biblib/libraries/{ADS_LIBRARY_ID}"
 
 # Show all authors when the list is this long or shorter; otherwise use et al.
 MAX_AUTHORS_BEFORE_ETAL = 5
@@ -62,6 +58,13 @@ def get_token():
 # ---------------------------------------------------------------------------
 # Fetch
 # ---------------------------------------------------------------------------
+
+
+def fetch_library_count(token):
+    headers = {"Authorization": f"Bearer {token}"}
+    r = requests.get(ADS_LIBRARY_API, headers=headers, params={"rows": 0})
+    r.raise_for_status()
+    return r.json()["metadata"]["num_documents"]
 
 
 def fetch_publications(token):
@@ -187,23 +190,23 @@ _OL_PATTERN = re.compile(
 )
 
 
-def build_ol_body(docs):
+def build_ol_body(docs, library_count):
     items = "".join(render_li(doc) for doc in docs)
     footer = (
         "\n"
         "\t\t\t\t\t\t\t<br>\n"
-        "\t\t\t\t\t\t\t<p><strong>A full listing of my publications is also "
-        f'available on <a href="{ADS_PROFILE_URL}" target="blank">'
+        f"\t\t\t\t\t\t\t<p><strong>A full listing of my {library_count} refereed "
+        f'publications is available on <a href="{ADS_LIBRARY_URL}" target="blank">'
         "SAO/NASA ADS</a>.</strong></p>\n"
         "\t\t\t\t\t\t"
     )
     return f"\n{items}{footer}"
 
 
-def update_html(html, docs):
+def update_html(html, docs, library_count):
     if not _OL_PATTERN.search(html):
         sys.exit('Could not find <ol type="1">…</ol> in index.html.')
-    new_body = build_ol_body(docs)
+    new_body = build_ol_body(docs, library_count)
     return _OL_PATTERN.sub(
         lambda m: m.group(1) + new_body + m.group(3),
         html,
@@ -221,7 +224,11 @@ def main():
 
     print("Querying ADS...", end=" ", flush=True)
     docs = fetch_publications(token)
-    print(f"{len(docs)} publications.")
+    print(f"{len(docs)} selected publications.")
+
+    print("Fetching library count...", end=" ", flush=True)
+    library_count = fetch_library_count(token)
+    print(f"{library_count} refereed publications in library.")
 
     here = os.path.dirname(os.path.abspath(__file__))
     index_path = os.path.join(here, "index.html")
@@ -229,7 +236,7 @@ def main():
     with open(index_path) as f:
         html = f.read()
 
-    new_html = update_html(html, docs)
+    new_html = update_html(html, docs, library_count)
 
     with open(index_path, "w") as f:
         f.write(new_html)
