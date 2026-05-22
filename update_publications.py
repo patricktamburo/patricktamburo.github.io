@@ -67,6 +67,19 @@ def fetch_library_count(token):
     return r.json()["metadata"]["num_documents"]
 
 
+def load_excluded_bibcodes():
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "excluded_bibcodes.txt")
+    if not os.path.exists(path):
+        return set()
+    excluded = set()
+    with open(path) as f:
+        for line in f:
+            line = line.split("#")[0].strip()
+            if line:
+                excluded.add(line)
+    return excluded
+
+
 def fetch_publications(token):
     headers = {"Authorization": f"Bearer {token}"}
     params = {
@@ -79,6 +92,9 @@ def fetch_publications(token):
     r = requests.get(ADS_SEARCH_URL, headers=headers, params=params)
     r.raise_for_status()
     docs = r.json()["response"]["docs"]
+
+    excluded = load_excluded_bibcodes()
+    docs = [doc for doc in docs if doc.get("bibcode") not in excluded]
 
     # Keep only papers where Tamburo appears in the first three authors.
     def tamburo_in_first_three(doc):
