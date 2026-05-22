@@ -77,6 +77,13 @@ def fetch_publications(token):
     r.raise_for_status()
     docs = r.json()["response"]["docs"]
 
+    # Keep only papers where Tamburo appears in the first three authors.
+    def tamburo_in_first_three(doc):
+        authors = doc.get("author") or []
+        return any("Tamburo" in a for a in authors[:3])
+
+    docs = [doc for doc in docs if tamburo_in_first_three(doc)]
+
     # If a preprint has since been published (same title), drop the preprint.
     published_titles = {
         doc["title"][0].lower()
