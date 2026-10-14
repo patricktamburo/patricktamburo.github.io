@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <!-- Preload is necessary because we show these images when we disconnect from the server,
+    but at that point we cannot load these images from the server -->
+    <link rel="preload" href="./assets/gradient-yHQUC_QB.png" as="image" />
+    <link rel="preload" href="./assets/noise-60BoTA8O.png" as="image" />
+    <!-- Preload the fonts -->
+    <link rel="preload" href="./assets/Lora-VariableFont_wght-CZceb_kH.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/PTSans-Regular-Bam3NpBI.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/PTSans-Bold-C_DwAp7Z.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Regular-CEsLFVD9.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Medium-D5MAsWEG.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Bold-C6PDArdf.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="a marimo app" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <script data-marimo="true">
+      function __resizeIframe(obj) {
+        const scrollbarHeight = 20; // Max between windows, mac, and linux
+
+        function setHeight() {
+          // Guard against race condition where iframe isn't ready
+          if (!obj.contentWindow?.document?.documentElement) {
+            return;
+          }
+          const element = obj.contentWindow.document.documentElement;
+          // If there is no vertical scrollbar, we don't need to resize the iframe
+          if (element.scrollHeight === element.clientHeight) {
+            return;
+          }
+
+          // Create a new height that includes the scrollbar height if it's visible
+          const hasHorizontalScrollbar = element.scrollWidth > element.clientWidth;
+          const newHeight = element.scrollHeight + (hasHorizontalScrollbar ? scrollbarHeight : 0);
+
+          // Only update the height if it's different from the current height
+          if (obj.style.height !== `${newHeight}px`) {
+            obj.style.height = `${newHeight}px`;
+          }
+        }
+
+        // Resize the iframe to the height of the content and bottom scrollbar height
+        setHeight();
+
+        // Resize the iframe when the content changes
+        const resizeObserver = new ResizeObserver((_entries) => {
+          setHeight();
+        });
+        // Only observe if iframe content is ready
+        if (obj.contentWindow?.document?.body) {
+          resizeObserver.observe(obj.contentWindow.document.body);
+        }
+      }
+    </script>
+    <marimo-filename hidden>notebook.py</marimo-filename>
+    <!-- TODO(Trevor): Legacy, required by VS Code plugin. Remove when plugin is updated (see marimo/server/_templates/template.py) -->
+    <marimo-version data-version="{{ version }}" hidden></marimo-version>
+    <marimo-user-config data-config="{{ user_config }}" hidden></marimo-user-config>
+    <marimo-server-token data-token="{{ server_token }}" hidden></marimo-server-token>
+    <!-- /TODO -->
+    <title>orbital sim</title>
+    <script type="module" crossorigin src="./assets/index-DafnX1Xx.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-B0Z9INg1.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-CUdNIagt.js">
+    <link rel="modulepreload" crossorigin href="./assets/compiler-runtime-BQ9S8nyo.js">
+    <link rel="modulepreload" crossorigin href="./assets/useEvent-Dc9HkKI2.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-dom-CKsE8sC1.js">
+    <link rel="modulepreload" crossorigin href="./assets/schemas-BL-NsLlF.js">
+    <link rel="modulepreload" crossorigin href="./assets/isObject-BCaOs5rp.js">
+    <link rel="modulepreload" crossorigin href="./assets/isSymbol-oX0TOjjx.js">
+    <link rel="modulepreload" crossorigin href="./assets/now-Cmx0b_zA.js">
+    <link rel="modulepreload" crossorigin href="./assets/debounce-aFmHgJZY.js">
+    <link rel="modulepreload" crossorigin href="./assets/isArrayLikeObject-DnwgSs_Z.js">
+    <link rel="modulepreload" crossorigin href="./assets/_baseMerge-CQpUq7ep.js">
+    <link rel="modulepreload" crossorigin href="./assets/objects-snlMn4yk.js">
+    <link rel="modulepreload" crossorigin href="./assets/jsx-runtime-B74pBk57.js">
+    <link rel="modulepreload" crossorigin href="./assets/useEventListener-BdZUApHd.js">
+    <link rel="modulepreload" crossorigin href="./assets/invariant-Ci2dTZ72.js">
+    <link rel="modulepreload" crossorigin href="./assets/config-BxZgoFvi.js">
+    <link rel="modulepreload" crossorigin href="./assets/utils-B4K466FK.js">
+    <link rel="modulepreload" crossorigin href="./assets/session-DXKMv4Bs.js">
+    <link rel="modulepreload" crossorigin href="./assets/Deferred-CrTnjj37.js">
+    <link rel="modulepreload" crossorigin href="./assets/config-DpGPGznL.js">
+    <link rel="modulepreload" crossorigin href="./assets/clsx-DB0hHKMi.js">
+    <link rel="modulepreload" crossorigin href="./assets/cn-ldLVeaqm.js">
+    <link rel="modulepreload" crossorigin href="./assets/fullscreen-BmzAqMKq.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-CyYN7zJg.js">
+    <link rel="modulepreload" crossorigin href="./assets/menu-items-BBdeXCvU.js">
+    <link rel="modulepreload" crossorigin href="./assets/use-restore-focus-B98SEiGc.js">
+    <link rel="modulepreload" crossorigin href="./assets/button-BoklZTGL.js">
+    <link rel="modulepreload" crossorigin href="./assets/createLucideIcon-rHn2EdoM.js">
+    <link rel="modulepreload" crossorigin href="./assets/check-Wea4hZ6R.js">
+    <link rel="modulepreload" crossorigin href="./assets/context-BFOBKCJB.js">
+    <link rel="modulepreload" crossorigin href="./assets/useNumberFormatter-C4-_TnkF.js">
+    <link rel="modulepreload" crossorigin href="./assets/select-BplWpfFo.js">
+    <link rel="modulepreload" crossorigin href="./assets/circle-CeQt3rdW.js">
+    <link rel="modulepreload" crossorigin href="./assets/toast-KNfsFUiB.js">
+    <link rel="modulepreload" crossorigin href="./assets/tooltip-DR2Z2N4w.js">
+    <link rel="modulepreload" crossorigin href="./assets/paths-CzfpItSz.js">
+    <link rel="modulepreload" crossorigin href="./assets/useLifecycle-DKSBdWUf.js">
+    <link rel="modulepreload" crossorigin href="./assets/toDate-BbJ1_N2T.js">
+    <link rel="modulepreload" crossorigin href="./assets/database-zap-CrkOvbyN.js">
+    <link rel="modulepreload" crossorigin href="./assets/alert-dialog-CeE3i3Qa.js">
+    <link rel="modulepreload" crossorigin href="./assets/arrays-BqUx5USx.js">
+    <link rel="modulepreload" crossorigin href="./assets/once-Haz_uxEL.js">
+    <link rel="modulepreload" crossorigin href="./assets/numbers-DsgsDslU.js">
+    <link rel="modulepreload" crossorigin href="./assets/useDebounce-DMbg9X18.js">
+    <link rel="modulepreload" crossorigin href="./assets/input-BDakodZ2.js">
+    <link rel="modulepreload" crossorigin href="./assets/use-toast-CC89xOwH.js">
+    <link rel="modulepreload" crossorigin href="./assets/requests-yTHMxhVa.js">
+    <link rel="modulepreload" crossorigin href="./assets/uuid-k9DpjH68.js">
+    <link rel="modulepreload" crossorigin href="./assets/write-secret-modal-BiG2tahJ.js">
+    <link rel="modulepreload" crossorigin href="./assets/plus-gbN72xHe.js">
+    <link rel="modulepreload" crossorigin href="./assets/trash-2-BJG-7Qob.js">
+    <link rel="modulepreload" crossorigin href="./assets/preload-helper-HclGiUj8.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-BczecT6V.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-BTskHGpb.js">
+    <link rel="modulepreload" crossorigin href="./assets/capabilities-Bj3s1hGN.js">
+    <link rel="modulepreload" crossorigin href="./assets/cjs-C49f7GXV.js">
+    <link rel="modulepreload" crossorigin href="./assets/createReducer-BPvK7C_R.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-Ccyblc8N.js">
+    <link rel="modulepreload" crossorigin href="./assets/marked.esm-B_3iMIUq.js">
+    <link rel="modulepreload" crossorigin href="./assets/strings-BHZPE0Mc.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-BN-7G8qZ.js">
+    <link rel="modulepreload" crossorigin href="./assets/badge-DFf033uX.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-CiUBikfn.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-MRn68vX1.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-Bviq_Dee.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-DBqBVprh.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-DueXZKz9.js">
+    <link rel="modulepreload" crossorigin href="./assets/stex-CJTNBbet.js">
+    <link rel="modulepreload" crossorigin href="./assets/useTheme-DcnXlv0_.js">
+    <link rel="modulepreload" crossorigin href="./assets/useAsyncData-DucTwMkf.js">
+    <link rel="modulepreload" crossorigin href="./assets/purify.es-CYRiAeUx.js">
+    <link rel="modulepreload" crossorigin href="./assets/cells-CzugpTQu.js">
+    <link rel="modulepreload" crossorigin href="./assets/get-DjNf4SIX.js">
+    <link rel="modulepreload" crossorigin href="./assets/copy-RyCOE8jo.js">
+    <link rel="modulepreload" crossorigin href="./assets/copy-BhJktFeI.js">
+    <link rel="modulepreload" crossorigin href="./assets/copy-icon-DFhUGBjO.js">
+    <link rel="modulepreload" crossorigin href="./assets/ErrorBoundary-BeE1cdgM.js">
+    <link rel="modulepreload" crossorigin href="./assets/config-B4VJJibu.js">
+    <link rel="modulepreload" crossorigin href="./assets/chevron-right-DOPs2jx8.js">
+    <link rel="modulepreload" crossorigin href="./assets/dropdown-menu-VuyoeQOD.js">
+    <link rel="modulepreload" crossorigin href="./assets/LazyAnyLanguageCodeMirror-B_IYTCX5.js">
+    <link rel="modulepreload" crossorigin href="./assets/hat-glasses-DVgK5i5l.js">
+    <link rel="modulepreload" crossorigin href="./assets/package-BeYhVWvM.js">
+    <link rel="modulepreload" crossorigin href="./assets/errors-D9vyuMar.js">
+    <link rel="modulepreload" crossorigin href="./assets/defaultLocale-CNPGWpMu.js">
+    <link rel="modulepreload" crossorigin href="./assets/precisionRound-Bq_nmf5u.js">
+    <link rel="modulepreload" crossorigin href="./assets/defaultLocale-D5bOh7g6.js">
+    <link rel="modulepreload" crossorigin href="./assets/vega-loader.browser-CLRkNgm7.js">
+    <link rel="modulepreload" crossorigin href="./assets/tooltip-PLkI_UfK.js">
+    <link rel="modulepreload" crossorigin href="./assets/filename-fxG7K_MU.js">
+    <link rel="modulepreload" crossorigin href="./assets/micromark-factory-space-D9Dr-k4J.js">
+    <link rel="modulepreload" crossorigin href="./assets/chunk-YOKDWASO-CaoEAGJk.js">
+    <link rel="stylesheet" crossorigin href="./assets/cells-0PFKL3SH.css">
+    <link rel="stylesheet" crossorigin href="./assets/index--sT8xf-8.css">
+  <marimo-wasm hidden=""></marimo-wasm>
+    <script>
+        if (window.location.protocol === 'file:') {
+            alert('Warning: This file must be served by an HTTP server to function correctly.');
+        }
+    </script>
+    
+    <style>
+        #save-button {
+            display: none !important;
+        }
+        #filename-input {
+            display: none !important;
+        }
+    </style>
+    
+<script data-marimo="true">
+    Object.defineProperty(window, "__MARIMO_EXPORT_CONTEXT__", {
+        value: Object.freeze({
+            trusted: true,
+            notebookCode: "import marimo\n\n__generated_with = \"0.25.1\"\napp = marimo.App(width=\"medium\")\n\n\n@app.cell\ndef _():\n    import marimo as mo\n    import numpy as np\n    import matplotlib.pyplot as plt\n    from scipy.integrate import odeint\n\n    return mo, np, odeint, plt\n\n\n@app.cell\ndef _(mo):\n    mo.md(\"\"\"\n    # Two-Body Orbital Dynamics Simulator\n    \"\"\")\n    return\n\n\n@app.cell\ndef _(mo):\n    mo.md(\"\"\"\n    Adjust the parameters below to see how they affect the orbital motion of two\n    gravitationally bound bodies. The simulation uses Newtonian gravity in the\n    center-of-mass frame.\n    \"\"\")\n    return\n\n\n@app.cell\ndef _(mo):\n    # Interactive controls\n    mass1 = mo.ui.slider(0.1, 10, value=1.0, step=0.1, label=\"Mass 1 (M\u2609)\")\n    mass2 = mo.ui.slider(0.1, 10, value=1.0, step=0.1, label=\"Mass 2 (M\u2609)\")\n    separation = mo.ui.slider(0.5, 5, value=2.0, step=0.1, label=\"Initial Separation (AU)\")\n    eccentricity = mo.ui.slider(0.0, 0.9, value=0.0, step=0.05, label=\"Eccentricity\")\n    sim_time = mo.ui.slider(1, 20, value=5, step=1, label=\"Simulation Time (years)\")\n\n    controls = mo.vstack([\n        mo.hstack([mass1, mass2]),\n        mo.hstack([separation, eccentricity]),\n        sim_time\n    ])\n    controls\n    return eccentricity, mass1, mass2, separation, sim_time\n\n\n@app.cell\ndef _(np):\n    # Physical constants (in units where G=1, mass in solar masses, \n    # distance in AU, time in years)\n    G = 4 * np.pi**2  # AU^3 / (M_sun * yr^2)\n    return (G,)\n\n\n@app.cell\ndef _(G, np):\n    def two_body_derivatives(state, t, m1, m2):\n        \"\"\"\n        state = [x1, y1, x2, y2, vx1, vy1, vx2, vy2]\n        \"\"\"\n        x1, y1, x2, y2, vx1, vy1, vx2, vy2 = state\n    \n        dx = x2 - x1\n        dy = y2 - y1\n        r = np.sqrt(dx**2 + dy**2)\n        r3 = r**3 + 1e-10  # avoid division by zero\n    \n        ax1 = G * m2 * dx / r3\n        ay1 = G * m2 * dy / r3\n        ax2 = -G * m1 * dx / r3\n        ay2 = -G * m1 * dy / r3\n    \n        return [vx1, vy1, vx2, vy2, ax1, ay1, ax2, ay2]\n\n    return (two_body_derivatives,)\n\n\n@app.cell\ndef _(G, eccentricity, mass1, mass2, np, separation):\n    def get_initial_conditions():\n        m1 = mass1.value\n        m2 = mass2.value\n        r0 = separation.value\n        e = eccentricity.value\n    \n        total_mass = m1 + m2\n    \n        # Place bodies on x-axis, centered at COM\n        # Body 1 at negative x, body 2 at positive x\n        x1_0 = -m2 / total_mass * r0\n        x2_0 = m1 / total_mass * r0\n        y1_0 = 0.0\n        y2_0 = 0.0\n    \n        # Velocity for circular orbit, then modify for eccentricity\n        # v_circ relates to reduced mass orbit\n        v_circ = np.sqrt(G * total_mass / r0)\n    \n        # For eccentric orbit, set velocity perpendicular to separation\n        # with magnitude adjusted by (1+e) at periapsis-like start\n        v_factor = np.sqrt((1 + e))\n    \n        v_rel = v_circ * v_factor\n    \n        # Split velocity by mass ratio (COM frame)\n        vy1_0 = -m2 / total_mass * v_rel\n        vy2_0 = m1 / total_mass * v_rel\n        vx1_0 = 0.0\n        vx2_0 = 0.0\n    \n        return [x1_0, y1_0, x2_0, y2_0, vx1_0, vy1_0, vx2_0, vy2_0]\n\n    initial_state = get_initial_conditions()\n    return (initial_state,)\n\n\n@app.cell\ndef _(initial_state, mass1, mass2, np, odeint, sim_time, two_body_derivatives):\n    # Run the simulation\n    t_max = sim_time.value\n    n_points = 2000\n    t_array = np.linspace(0, t_max, n_points)\n\n    solution = odeint(\n        two_body_derivatives, \n        initial_state, \n        t_array, \n        args=(mass1.value, mass2.value)\n    )\n\n    x1_traj = solution[:, 0]\n    y1_traj = solution[:, 1]\n    x2_traj = solution[:, 2]\n    y2_traj = solution[:, 3]\n\n    return x1_traj, x2_traj, y1_traj, y2_traj\n\n\n@app.cell\ndef _(mass1, mass2, plt, x1_traj, x2_traj, y1_traj, y2_traj):\n    # Create the visualization\n    fig, ax = plt.subplots(figsize=(8, 8))\n\n    # Plot trajectories\n    ax.plot(x1_traj, y1_traj, 'b-', alpha=0.6, linewidth=1, label='Body 1 path')\n    ax.plot(x2_traj, y2_traj, 'r-', alpha=0.6, linewidth=1, label='Body 2 path')\n\n    # Plot current positions (final point) as markers sized by mass\n    size1 = 100 + mass1.value * 50\n    size2 = 100 + mass2.value * 50\n\n    ax.scatter(x1_traj[-1], y1_traj[-1], s=size1, c='blue', \n               edgecolors='black', linewidth=2, zorder=5, label=f'Body 1 (M={mass1.value:.1f})')\n    ax.scatter(x2_traj[-1], y2_traj[-1], s=size2, c='red', \n               edgecolors='black', linewidth=2, zorder=5, label=f'Body 2 (M={mass2.value:.1f})')\n\n    # Mark center of mass\n    com_x = (mass1.value * x1_traj + mass2.value * x2_traj) / (mass1.value + mass2.value)\n    com_y = (mass1.value * y1_traj + mass2.value * y2_traj) / (mass1.value + mass2.value)\n    ax.plot(com_x, com_y, 'g+', markersize=8, label='Center of mass')\n\n    ax.set_xlabel('x (AU)')\n    ax.set_ylabel('y (AU)')\n    ax.set_title('Two-Body Orbital Trajectories')\n    ax.legend(loc='upper right', fontsize=9)\n    ax.set_aspect('equal')\n    ax.grid(True, alpha=0.3)\n\n    plt.tight_layout()\n    fig\n    return\n\n\n@app.cell\ndef _(mo):\n    mo.md(\"\"\"\n    ## Orbital Parameters\n    \"\"\")\n    return\n\n\n@app.cell\ndef _(G, mass1, mass2, mo, np, separation):\n    # Calculate and display derived orbital parameters\n    m1 = mass1.value\n    m2 = mass2.value\n    total_mass = m1 + m2\n    r0 = separation.value\n\n    period = 2 * np.pi * np.sqrt(r0**3 / (G * total_mass))\n\n    info = mo.md(f\"\"\"\n    **Derived Quantities:**\n\n    - Total mass: {total_mass:.2f} M\u2609\n    - Mass ratio (m1/m2): {m1/m2:.2f}\n    - Orbital period (circular case): {period:.2f} years\n    - Reduced mass: {m1*m2/total_mass:.3f} M\u2609\n    \"\"\")\n    info\n    return\n\n\n@app.cell\ndef _(mo):\n    mo.md(\"\"\"\n    ---\n    *Simulation uses units where G = 4\u03c0\u00b2 (AU\u00b3/M\u2609/yr\u00b2), appropriate for solar-system scale problems.\n    Try increasing eccentricity to see elliptical orbits, or changing the mass ratio to see\n    how the center of mass shifts.*\n    \"\"\")\n    return\n\n\nif __name__ == \"__main__\":\n    app.run()\n",
+        }),
+        writable: false,
+        configurable: false,
+    });
+</script>
+<marimo-code hidden="">import%20marimo%0A%0A__generated_with%20%3D%20%220.25.1%22%0Aapp%20%3D%20marimo.App(width%3D%22medium%22)%0A%0A%0A%40app.cell%0Adef%20_()%3A%0A%20%20%20%20import%20marimo%20as%20mo%0A%20%20%20%20import%20numpy%20as%20np%0A%20%20%20%20import%20matplotlib.pyplot%20as%20plt%0A%20%20%20%20from%20scipy.integrate%20import%20odeint%0A%0A%20%20%20%20return%20mo%2C%20np%2C%20odeint%2C%20plt%0A%0A%0A%40app.cell%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%22%22%22%0A%20%20%20%20%23%20Two-Body%20Orbital%20Dynamics%20Simulator%0A%20%20%20%20%22%22%22)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%22%22%22%0A%20%20%20%20Adjust%20the%20parameters%20below%20to%20see%20how%20they%20affect%20the%20orbital%20motion%20of%20two%0A%20%20%20%20gravitationally%20bound%20bodies.%20The%20simulation%20uses%20Newtonian%20gravity%20in%20the%0A%20%20%20%20center-of-mass%20frame.%0A%20%20%20%20%22%22%22)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(mo)%3A%0A%20%20%20%20%23%20Interactive%20controls%0A%20%20%20%20mass1%20%3D%20mo.ui.slider(0.1%2C%2010%2C%20value%3D1.0%2C%20step%3D0.1%2C%20label%3D%22Mass%201%20(M%E2%98%89)%22)%0A%20%20%20%20mass2%20%3D%20mo.ui.slider(0.1%2C%2010%2C%20value%3D1.0%2C%20step%3D0.1%2C%20label%3D%22Mass%202%20(M%E2%98%89)%22)%0A%20%20%20%20separation%20%3D%20mo.ui.slider(0.5%2C%205%2C%20value%3D2.0%2C%20step%3D0.1%2C%20label%3D%22Initial%20Separation%20(AU)%22)%0A%20%20%20%20eccentricity%20%3D%20mo.ui.slider(0.0%2C%200.9%2C%20value%3D0.0%2C%20step%3D0.05%2C%20label%3D%22Eccentricity%22)%0A%20%20%20%20sim_time%20%3D%20mo.ui.slider(1%2C%2020%2C%20value%3D5%2C%20step%3D1%2C%20label%3D%22Simulation%20Time%20(years)%22)%0A%0A%20%20%20%20controls%20%3D%20mo.vstack(%5B%0A%20%20%20%20%20%20%20%20mo.hstack(%5Bmass1%2C%20mass2%5D)%2C%0A%20%20%20%20%20%20%20%20mo.hstack(%5Bseparation%2C%20eccentricity%5D)%2C%0A%20%20%20%20%20%20%20%20sim_time%0A%20%20%20%20%5D)%0A%20%20%20%20controls%0A%20%20%20%20return%20eccentricity%2C%20mass1%2C%20mass2%2C%20separation%2C%20sim_time%0A%0A%0A%40app.cell%0Adef%20_(np)%3A%0A%20%20%20%20%23%20Physical%20constants%20(in%20units%20where%20G%3D1%2C%20mass%20in%20solar%20masses%2C%20%0A%20%20%20%20%23%20distance%20in%20AU%2C%20time%20in%20years)%0A%20%20%20%20G%20%3D%204%20*%20np.pi**2%20%20%23%20AU%5E3%20%2F%20(M_sun%20*%20yr%5E2)%0A%20%20%20%20return%20(G%2C)%0A%0A%0A%40app.cell%0Adef%20_(G%2C%20np)%3A%0A%20%20%20%20def%20two_body_derivatives(state%2C%20t%2C%20m1%2C%20m2)%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20state%20%3D%20%5Bx1%2C%20y1%2C%20x2%2C%20y2%2C%20vx1%2C%20vy1%2C%20vx2%2C%20vy2%5D%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20x1%2C%20y1%2C%20x2%2C%20y2%2C%20vx1%2C%20vy1%2C%20vx2%2C%20vy2%20%3D%20state%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20dx%20%3D%20x2%20-%20x1%0A%20%20%20%20%20%20%20%20dy%20%3D%20y2%20-%20y1%0A%20%20%20%20%20%20%20%20r%20%3D%20np.sqrt(dx**2%20%2B%20dy**2)%0A%20%20%20%20%20%20%20%20r3%20%3D%20r**3%20%2B%201e-10%20%20%23%20avoid%20division%20by%20zero%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20ax1%20%3D%20G%20*%20m2%20*%20dx%20%2F%20r3%0A%20%20%20%20%20%20%20%20ay1%20%3D%20G%20*%20m2%20*%20dy%20%2F%20r3%0A%20%20%20%20%20%20%20%20ax2%20%3D%20-G%20*%20m1%20*%20dx%20%2F%20r3%0A%20%20%20%20%20%20%20%20ay2%20%3D%20-G%20*%20m1%20*%20dy%20%2F%20r3%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20return%20%5Bvx1%2C%20vy1%2C%20vx2%2C%20vy2%2C%20ax1%2C%20ay1%2C%20ax2%2C%20ay2%5D%0A%0A%20%20%20%20return%20(two_body_derivatives%2C)%0A%0A%0A%40app.cell%0Adef%20_(G%2C%20eccentricity%2C%20mass1%2C%20mass2%2C%20np%2C%20separation)%3A%0A%20%20%20%20def%20get_initial_conditions()%3A%0A%20%20%20%20%20%20%20%20m1%20%3D%20mass1.value%0A%20%20%20%20%20%20%20%20m2%20%3D%20mass2.value%0A%20%20%20%20%20%20%20%20r0%20%3D%20separation.value%0A%20%20%20%20%20%20%20%20e%20%3D%20eccentricity.value%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20total_mass%20%3D%20m1%20%2B%20m2%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%23%20Place%20bodies%20on%20x-axis%2C%20centered%20at%20COM%0A%20%20%20%20%20%20%20%20%23%20Body%201%20at%20negative%20x%2C%20body%202%20at%20positive%20x%0A%20%20%20%20%20%20%20%20x1_0%20%3D%20-m2%20%2F%20total_mass%20*%20r0%0A%20%20%20%20%20%20%20%20x2_0%20%3D%20m1%20%2F%20total_mass%20*%20r0%0A%20%20%20%20%20%20%20%20y1_0%20%3D%200.0%0A%20%20%20%20%20%20%20%20y2_0%20%3D%200.0%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%23%20Velocity%20for%20circular%20orbit%2C%20then%20modify%20for%20eccentricity%0A%20%20%20%20%20%20%20%20%23%20v_circ%20relates%20to%20reduced%20mass%20orbit%0A%20%20%20%20%20%20%20%20v_circ%20%3D%20np.sqrt(G%20*%20total_mass%20%2F%20r0)%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%23%20For%20eccentric%20orbit%2C%20set%20velocity%20perpendicular%20to%20separation%0A%20%20%20%20%20%20%20%20%23%20with%20magnitude%20adjusted%20by%20(1%2Be)%20at%20periapsis-like%20start%0A%20%20%20%20%20%20%20%20v_factor%20%3D%20np.sqrt((1%20%2B%20e))%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20v_rel%20%3D%20v_circ%20*%20v_factor%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%23%20Split%20velocity%20by%20mass%20ratio%20(COM%20frame)%0A%20%20%20%20%20%20%20%20vy1_0%20%3D%20-m2%20%2F%20total_mass%20*%20v_rel%0A%20%20%20%20%20%20%20%20vy2_0%20%3D%20m1%20%2F%20total_mass%20*%20v_rel%0A%20%20%20%20%20%20%20%20vx1_0%20%3D%200.0%0A%20%20%20%20%20%20%20%20vx2_0%20%3D%200.0%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20return%20%5Bx1_0%2C%20y1_0%2C%20x2_0%2C%20y2_0%2C%20vx1_0%2C%20vy1_0%2C%20vx2_0%2C%20vy2_0%5D%0A%0A%20%20%20%20initial_state%20%3D%20get_initial_conditions()%0A%20%20%20%20return%20(initial_state%2C)%0A%0A%0A%40app.cell%0Adef%20_(initial_state%2C%20mass1%2C%20mass2%2C%20np%2C%20odeint%2C%20sim_time%2C%20two_body_derivatives)%3A%0A%20%20%20%20%23%20Run%20the%20simulation%0A%20%20%20%20t_max%20%3D%20sim_time.value%0A%20%20%20%20n_points%20%3D%202000%0A%20%20%20%20t_array%20%3D%20np.linspace(0%2C%20t_max%2C%20n_points)%0A%0A%20%20%20%20solution%20%3D%20odeint(%0A%20%20%20%20%20%20%20%20two_body_derivatives%2C%20%0A%20%20%20%20%20%20%20%20initial_state%2C%20%0A%20%20%20%20%20%20%20%20t_array%2C%20%0A%20%20%20%20%20%20%20%20args%3D(mass1.value%2C%20mass2.value)%0A%20%20%20%20)%0A%0A%20%20%20%20x1_traj%20%3D%20solution%5B%3A%2C%200%5D%0A%20%20%20%20y1_traj%20%3D%20solution%5B%3A%2C%201%5D%0A%20%20%20%20x2_traj%20%3D%20solution%5B%3A%2C%202%5D%0A%20%20%20%20y2_traj%20%3D%20solution%5B%3A%2C%203%5D%0A%0A%20%20%20%20return%20x1_traj%2C%20x2_traj%2C%20y1_traj%2C%20y2_traj%0A%0A%0A%40app.cell%0Adef%20_(mass1%2C%20mass2%2C%20plt%2C%20x1_traj%2C%20x2_traj%2C%20y1_traj%2C%20y2_traj)%3A%0A%20%20%20%20%23%20Create%20the%20visualization%0A%20%20%20%20fig%2C%20ax%20%3D%20plt.subplots(figsize%3D(8%2C%208))%0A%0A%20%20%20%20%23%20Plot%20trajectories%0A%20%20%20%20ax.plot(x1_traj%2C%20y1_traj%2C%20'b-'%2C%20alpha%3D0.6%2C%20linewidth%3D1%2C%20label%3D'Body%201%20path')%0A%20%20%20%20ax.plot(x2_traj%2C%20y2_traj%2C%20'r-'%2C%20alpha%3D0.6%2C%20linewidth%3D1%2C%20label%3D'Body%202%20path')%0A%0A%20%20%20%20%23%20Plot%20current%20positions%20(final%20point)%20as%20markers%20sized%20by%20mass%0A%20%20%20%20size1%20%3D%20100%20%2B%20mass1.value%20*%2050%0A%20%20%20%20size2%20%3D%20100%20%2B%20mass2.value%20*%2050%0A%0A%20%20%20%20ax.scatter(x1_traj%5B-1%5D%2C%20y1_traj%5B-1%5D%2C%20s%3Dsize1%2C%20c%3D'blue'%2C%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20edgecolors%3D'black'%2C%20linewidth%3D2%2C%20zorder%3D5%2C%20label%3Df'Body%201%20(M%3D%7Bmass1.value%3A.1f%7D)')%0A%20%20%20%20ax.scatter(x2_traj%5B-1%5D%2C%20y2_traj%5B-1%5D%2C%20s%3Dsize2%2C%20c%3D'red'%2C%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20edgecolors%3D'black'%2C%20linewidth%3D2%2C%20zorder%3D5%2C%20label%3Df'Body%202%20(M%3D%7Bmass2.value%3A.1f%7D)')%0A%0A%20%20%20%20%23%20Mark%20center%20of%20mass%0A%20%20%20%20com_x%20%3D%20(mass1.value%20*%20x1_traj%20%2B%20mass2.value%20*%20x2_traj)%20%2F%20(mass1.value%20%2B%20mass2.value)%0A%20%20%20%20com_y%20%3D%20(mass1.value%20*%20y1_traj%20%2B%20mass2.value%20*%20y2_traj)%20%2F%20(mass1.value%20%2B%20mass2.value)%0A%20%20%20%20ax.plot(com_x%2C%20com_y%2C%20'g%2B'%2C%20markersize%3D8%2C%20label%3D'Center%20of%20mass')%0A%0A%20%20%20%20ax.set_xlabel('x%20(AU)')%0A%20%20%20%20ax.set_ylabel('y%20(AU)')%0A%20%20%20%20ax.set_title('Two-Body%20Orbital%20Trajectories')%0A%20%20%20%20ax.legend(loc%3D'upper%20right'%2C%20fontsize%3D9)%0A%20%20%20%20ax.set_aspect('equal')%0A%20%20%20%20ax.grid(True%2C%20alpha%3D0.3)%0A%0A%20%20%20%20plt.tight_layout()%0A%20%20%20%20fig%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%22%22%22%0A%20%20%20%20%23%23%20Orbital%20Parameters%0A%20%20%20%20%22%22%22)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(G%2C%20mass1%2C%20mass2%2C%20mo%2C%20np%2C%20separation)%3A%0A%20%20%20%20%23%20Calculate%20and%20display%20derived%20orbital%20parameters%0A%20%20%20%20m1%20%3D%20mass1.value%0A%20%20%20%20m2%20%3D%20mass2.value%0A%20%20%20%20total_mass%20%3D%20m1%20%2B%20m2%0A%20%20%20%20r0%20%3D%20separation.value%0A%0A%20%20%20%20period%20%3D%202%20*%20np.pi%20*%20np.sqrt(r0**3%20%2F%20(G%20*%20total_mass))%0A%0A%20%20%20%20info%20%3D%20mo.md(f%22%22%22%0A%20%20%20%20**Derived%20Quantities%3A**%0A%0A%20%20%20%20-%20Total%20mass%3A%20%7Btotal_mass%3A.2f%7D%20M%E2%98%89%0A%20%20%20%20-%20Mass%20ratio%20(m1%2Fm2)%3A%20%7Bm1%2Fm2%3A.2f%7D%0A%20%20%20%20-%20Orbital%20period%20(circular%20case)%3A%20%7Bperiod%3A.2f%7D%20years%0A%20%20%20%20-%20Reduced%20mass%3A%20%7Bm1*m2%2Ftotal_mass%3A.3f%7D%20M%E2%98%89%0A%20%20%20%20%22%22%22)%0A%20%20%20%20info%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%22%22%22%0A%20%20%20%20---%0A%20%20%20%20*Simulation%20uses%20units%20where%20G%20%3D%204%CF%80%C2%B2%20(AU%C2%B3%2FM%E2%98%89%2Fyr%C2%B2)%2C%20appropriate%20for%20solar-system%20scale%20problems.%0A%20%20%20%20Try%20increasing%20eccentricity%20to%20see%20elliptical%20orbits%2C%20or%20changing%20the%20mass%20ratio%20to%20see%0A%20%20%20%20how%20the%20center%20of%20mass%20shifts.*%0A%20%20%20%20%22%22%22)%0A%20%20%20%20return%0A%0A%0Aif%20__name__%20%3D%3D%20%22__main__%22%3A%0A%20%20%20%20app.run()%0A</marimo-code></head>
+  <body>
+    <div id="root"></div>
+    <script data-marimo="true">
+      Object.defineProperty(window, "__MARIMO_MOUNT_CONFIG__", {
+        value: Object.freeze({
+            "filename": "notebook.py",
+            "cwd": "",
+            "lspWorkspace": null,
+            "mode": "read",
+            "version": "0.25.1",
+            "serverToken": "unused",
+            "config": {"ai": {"allow_provider_config": true, "custom_providers": {}, "enabled": true, "models": {"custom_models": [], "displayed_models": []}}, "completion": {"activate_on_typing": true, "auto_close_pairs": true, "copilot": false, "signature_hint_on_typing": false}, "diagnostics": {"sql_linter": true}, "display": {"cell_output": "below", "code_editor_font_size": 14, "code_lens": true, "dataframes": "rich", "default_table_max_columns": 50, "default_table_page_size": 10, "default_width": "medium", "reference_highlighting": true, "theme": "light"}, "formatting": {"line_length": 79}, "keymap": {"overrides": {}, "preset": "default"}, "language_servers": {"pylsp": {"enable_flake8": false, "enable_mypy": true, "enable_pydocstyle": false, "enable_pyflakes": false, "enable_pylint": false, "enable_ruff": true, "enabled": false}}, "mcp": {"mcpServers": {}, "presets": []}, "package_management": {"manager": "pip"}, "runtime": {"auto_instantiate": false, "auto_reload": "off", "default_csv_encoding": "utf-8", "default_sql_output": "auto", "on_cell_change": "autorun", "output_max_bytes": 8000000, "reactive_tests": true, "show_tracebacks": false, "std_stream_max_bytes": 1000000, "watcher_on_save": "lazy"}, "save": {"autosave": "off", "autosave_delay": 1000, "format_on_save": false}, "server": {"browser": "default", "follow_symlink": false}, "snippets": {"custom_paths": [], "include_default_snippets": true}},
+            "configOverrides": {},
+            "appConfig": {"sql_output": "auto", "width": "medium"},
+            "layout": null,
+            "view": {"showAppCode": false},
+            "notebook": null,
+            "session": null,
+            "runtimeConfig": null
+        }),
+        writable: false,
+        configurable: false,
+      });
+    </script>
+  </body>
+</html>
